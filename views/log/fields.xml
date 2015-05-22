@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <fields>
+         <mhiddenfield id="log::idLog" />        
+<mlookupfieldvalue id="log::idUsuarioDesc"  label="Usuario"  related="log::idUsuario:idUsuario,log::idUsuarioDesc:descricao" action="curso/usuario/lookup" /><mhiddenfield id="log::idUsuario" />        
+<mtimestampfield id="log::timestamp" label="Timestamp" />        
+<mtextfield id="log::descricao" label="Descricao" />        
+<mtextfield id="log::operacao" label="Operacao" />        
+<mnumberfield id="log::idModel" label="IdModel" />
+    </fields>
+    <buttons>
+        <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
+    </buttons>
+    <validators>
+    </validators>
+</view>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <fields>
+         <mhiddenfield id="usuario::idUsuario" />        
+<mlookupfieldvalue id="usuario::idPessoaDesc"  label="Pessoa"  related="usuario::idPessoa:idPessoa,usuario::idPessoaDesc:descricao" action="curso/pessoa/lookup" /><mhiddenfield id="usuario::idPessoa" />        
+<mlookupfieldvalue id="usuario::idSetorDesc"  label="Setor"  related="usuario::idSetor:idSetor,usuario::idSetorDesc:descricao" action="curso/setor/lookup" /><mhiddenfield id="usuario::idSetor" />        
+<mtextfield id="usuario::login" label="Login" />        
+<mtextfield id="usuario::password" label="Password" />        
+<mtextfield id="usuario::passMD5" label="PassMD5" />
+    </fields>
+    <buttons>
+        <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
+    </buttons>
+    <validators>
+    </validators>
+</view>
