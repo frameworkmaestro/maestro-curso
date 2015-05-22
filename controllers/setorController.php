@@ -22,6 +22,7 @@ class SetorController extends MController {
     public function formFind() {
         $setor= new Setor($this->data->id);
         $filter->nome = $this->data->nome;
+        $filter->sigla = $this->data->sigla;
         $this->data->query = $setor->listByFilter($filter)->asQuery();
         $this->render();
     }

@@ -35,6 +35,9 @@ class Setor extends map\SetorMap {
         if ($filter->nome){
             $criteria->where("nome LIKE '{$filter->nome}%'");
         }
+         if ($filter->sigla){
+            $criteria->where("sigla LIKE '{$filter->sigla}%'");
+        }
         return $criteria;
     }
 }

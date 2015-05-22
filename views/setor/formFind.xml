@@ -5,11 +5,13 @@
         <fields>
             <mhcontainer>
                 <mtextfield id="nome" label="Nome" value="$this->data->nome" size="15" />
+                <mtextfield id="sigla" label="Sigla" value="$this->data->sigla" size="15" />
                 <mbuttonfind/>
             </mhcontainer>
             <mdatagrid id="gridFind" query="$this->data->query" pageLength="15">
                 <mdatagridcolumn field="idSetor" visible="false"/>
-                <mdatagridhyperlink field="nome" action=">curso/setor/formObject/#0#" title="Nome" width="100%"/>
+                <mdatagridhyperlink field="nome" action=">curso/setor/formObject/#0#" title="Nome" width="80%"/>
+                <mdatagridcolumn field="sigla" title="Sigla" width="20%"/>
             </mdatagrid>
         </fields>
     </mform>
