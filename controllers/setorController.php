@@ -23,6 +23,7 @@ class SetorController extends MController {
         $setor= new Setor($this->data->id);
         $filter->nome = $this->data->nome;
         $filter->sigla = $this->data->sigla;
+        $filter->idSetorPai = $this->data->idSetorPai;
         $this->data->query = $setor->listByFilter($filter)->asQuery();
         $this->render();
     }

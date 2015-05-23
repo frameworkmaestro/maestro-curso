@@ -31,13 +31,17 @@ class Setor extends map\SetorMap {
     }
 
     public function listByFilter($filter){
-        $criteria = $this->getCriteria()->select('*')->orderBy('nome');
+        $criteria = $this->getCriteria()->select('*,SetorPai.nome as NomeSetorPai')->orderBy('nome');
         if ($filter->nome){
             $criteria->where("nome LIKE '{$filter->nome}%'");
         }
          if ($filter->sigla){
             $criteria->where("sigla LIKE '{$filter->sigla}%'");
         }
+        if ($filter->idSetorPai){
+            $criteria->where("idSetorPai","=","{$filter->idSetorPai}");
+        }
+        $criteria->join('setor','setor SetorPai ','setor.idSetorPai=SetorPai.idSetor','left');
         return $criteria;
     }
 }
