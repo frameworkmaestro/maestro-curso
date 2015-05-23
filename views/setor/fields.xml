@@ -2,10 +2,15 @@
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
     <fields>
-         <mhiddenfield id="setor::idSetor" />        
-<mtextfield id="setor::sigla" label="Sigla" />        
-<mtextfield id="setor::nome" label="Nome" />        
-<mlookupfieldvalue id="setor::idSetorPaiDesc"  label="SetorPai"  related="setor::idSetorPai:idSetorPai,setor::idSetorPaiDesc:descricao" action="curso/setorpai/lookup" /><mhiddenfield id="setor::idSetorPai" />
+       <mhiddenfield id="setor::idSetor" />        
+       <mtextfield id="setor::sigla" label="Sigla" />        
+       <mtextfield id="setor::nome" label="Nome" />      
+
+       <mlookupfieldvalue id="setor::idSetorPaiDesc"  label="SetorPai"  related="setor::idSetorPai:idSetor,setor::idSetorPaiDesc:nome" 
+        action="curso/setor/lookup" />
+
+        <mtextfield id="setor::idSetorPai" />
+
     </fields>
     <buttons>
         <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
