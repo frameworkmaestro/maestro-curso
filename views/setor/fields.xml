@@ -16,5 +16,6 @@
         <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
     </buttons>
     <validators>
+            <mrequiredvalidator field="setor::nome" message="Preencha o Nome do Setor"/>
     </validators>
 </view>
