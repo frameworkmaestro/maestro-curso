@@ -3,6 +3,7 @@
 <view>
     <mform id="formBase" title="Setor" close=">curso/main">
         <action action="formFind" label="Pesquisar" />
+        <action action="formSetoresSemSetorPai" label="Setores sem Pai" />
         <action action="formNew" label="Inserir Novo" />
     </mform>
 </view>

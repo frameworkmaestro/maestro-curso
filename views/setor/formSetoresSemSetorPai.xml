@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform id="formFind" title="Setores sem setor pai" close=">curso/main" base="formBase">
+        <fields>
+            <mdatagrid id="gridSetorSemSetorPai" query="$this->data->query" pageLength="15">
+                <mdatagridcolumn field="idSetor" visible="false"/>
+                <mdatagridhyperlink field="nome" action=">curso/setor/formObject/#0#" title="Nome" width="40%"/>
+                <mdatagridcolumn field="sigla" title="Sigla" width="20%"/>
+            </mdatagrid>
+        </fields>
+    </mform>
+</view>

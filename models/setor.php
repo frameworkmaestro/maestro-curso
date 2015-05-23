@@ -44,6 +44,13 @@ class Setor extends map\SetorMap {
         $criteria->join('setor','setor SetorPai ','setor.idSetorPai=SetorPai.idSetor','left');
         return $criteria;
     }
+
+    public function listSetoresSemSetorPai(){
+         $criteria = $this->getCriteria()->select('*')->orderBy('nome');
+         $criteria->where("idSetorPai is null");
+         return $criteria;
+    }
+
 }
 
 ?>

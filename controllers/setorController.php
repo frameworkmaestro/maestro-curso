@@ -75,4 +75,10 @@ class SetorController extends MController {
             $this->renderPrompt('information',"Setor [{$this->data->nome}] removido.", $go);
     }
 
+    public function formSetoresSemSetorPai(){
+        $setor = Setor::create();
+        $this->data->query = $setor->listSetoresSemSetorPai()->asQuery();
+        $this->render();
+    }
+
 }
