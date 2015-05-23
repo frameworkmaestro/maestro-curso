@@ -50,7 +50,7 @@ class SetorController extends MController {
         $setor = new Setor($this->data->id);
         $ok = '>curso/setor/delete/' . $setor->getId();
         $cancelar = '>curso/setor/formObject/' . $setor->getId();
-        $this->renderPrompt('confirmation', "Confirma remoção do Setor [{$model->getDescription()}] ?", $ok, $cancelar);
+        $this->renderPrompt('confirmation', "Confirma remoção do Setor [{$setor->getDescription()}] ?", $ok, $cancelar);
     }
 
     public function lookup() {
