@@ -37,6 +37,12 @@ class Pessoa extends map\PessoaMap {
         }
         return $criteria;
     }
+
+    public function save(){
+        $this->setFoto(\Mutil::parsefiles('foto', 0));
+        parent::save();
+    }
+
 }
 
 ?>

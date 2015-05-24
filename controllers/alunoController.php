@@ -63,7 +63,7 @@ class AlunoController extends MController {
 
     public function save() {
             $aluno = new Aluno($this->data->aluno);
-            $aluno->setFoto(\Mutil::parsefiles('foto', 0));
+           // $aluno->setFoto(\Mutil::parsefiles('foto', 0));
             $aluno->save();
             $go = '>curso/aluno/formObject/' . $aluno->getId();
             $this->renderPrompt('information','OK',$go);
