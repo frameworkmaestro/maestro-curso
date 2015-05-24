@@ -24,6 +24,17 @@ class Aluno extends map\AlunoMap {
             'converters' => array()
         );
     }
+
+    public function validate() {
+        parent::validate();
+        // exemplo de validação específica: recusa nascidos em julho..
+        $dataNascimento = $this->getDataNascimento();
+        if ($dataNascimento) {
+            if ($dataNascimento->getMonth() == '07') {
+                throw new \EModelException('Nascidos em julho não são aceitos!');
+            }
+        }
+    }
     
     public function getDescription(){
         return $this->getMatricula();
