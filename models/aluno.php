@@ -34,6 +34,9 @@ class Aluno extends map\AlunoMap {
         if ($filter->matricula){
             $criteria->where("matricula LIKE '{$filter->matricula}%'");
         }
+        if ($filter->nome){
+            $criteria->where("nome LIKE '{$filter->nome}%'");
+        }
         return $criteria;
     }
 }

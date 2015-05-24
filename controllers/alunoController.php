@@ -22,6 +22,7 @@ class AlunoController extends MController {
     public function formFind() {
         $aluno= new Aluno($this->data->id);
         $filter->matricula = $this->data->matricula;
+        $filter->nome = $this->data->nome;
         $this->data->query = $aluno->listByFilter($filter)->asQuery();
         $this->render();
     }

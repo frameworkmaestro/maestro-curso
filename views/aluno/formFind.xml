@@ -5,11 +5,15 @@
         <fields>
             <mhcontainer>
                 <mtextfield id="matricula" label="Matricula" value="$this->data->matricula" size="15" />
+                <mtextfield id="nome" label="Nome" value="$this->data->nome" size="15" />
                 <mbuttonfind/>
             </mhcontainer>
             <mdatagrid id="gridFind" query="$this->data->query" pageLength="15">
                 <mdatagridcolumn field="idAluno" visible="false"/>
-                <mdatagridhyperlink field="matricula" action=">curso/aluno/formObject/#0#" title="Matricula" width="100%"/>
+                <mdatagridhyperlink field="matricula" action=">curso/aluno/formObject/#0#" title="Matricula" width="10%"/>
+                <mdatagridcolumn field="nome" title="Nome" width-="30%"/>
+                <mdatagridcolumn field="email" title="email" width="20%"/>
+                <mdatagridcolumn field="dataNascimento" title="Data nascimento" width="20%"/>
             </mdatagrid>
         </fields>
     </mform>
