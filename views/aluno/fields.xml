@@ -2,13 +2,16 @@
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
     <fields>
-         <mhiddenfield id="aluno::idAluno" />        
-<mtextfield id="aluno::matricula" label="Matricula" />        
-<mnumberfield id="aluno::idPessoa" label="IdPessoa" />
-    </fields>
-    <buttons>
-        <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
-    </buttons>
-    <validators>
-    </validators>
+       <mhiddenfield id="aluno::idAluno" />        
+       <mtextfield id="aluno::matricula" label="Matrícula" mask="####-#"/>      
+       <mtextfield id="aluno::nome" label="Nome" />      
+       <mcalendarfield id="aluno::dataNascimento" label="Data de Nascimento" />     
+       <mfilefield id="aluno::foto" label="Foto" multiple="false" text="Selecionar Arquivo" /> 
+       <memailfield id="aluno::email" label="Email" /> 
+   </fields>
+   <buttons>
+    <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
+</buttons>
+<validators>
+</validators>
 </view>

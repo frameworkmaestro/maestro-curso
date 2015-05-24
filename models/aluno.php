@@ -19,8 +19,7 @@ class Aluno extends map\AlunoMap {
         return array(
             'log' => array( matricula ),
             'validators' => array(
-                'matricula' => array('notnull'),
-                'idPessoa' => array('notnull'),
+                'matricula' => array('notnull')
             ),
             'converters' => array()
         );
