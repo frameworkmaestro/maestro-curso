@@ -5,5 +5,8 @@
         <property title="$this->data->aluno->description" />
         <action action="{{ 'formUpdate/' . $this->data->id }}" label="Editar" />
         <action action="{{ 'formDelete/' . $this->data->id }}" label="Excluir" />
+        <fields>
+            <mimage id="imgFoto" label="Foto do Aluno:" source="$this->data->aluno->fotoUrl"/>
+        </fields>
     </mform>
 </view>

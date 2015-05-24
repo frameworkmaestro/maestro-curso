@@ -33,7 +33,9 @@ class AlunoController extends MController {
     }
 
     public function formObject() {
-        $this->data->aluno = Aluno::create($this->data->id)->getData();
+        $aluno = Aluno::create($this->data->id);
+        $this->data->aluno = $aluno->getData();
+        $this->data->aluno->fotoUrl = $aluno->getFoto()->getUrl();
         $this->render();
     }
 
