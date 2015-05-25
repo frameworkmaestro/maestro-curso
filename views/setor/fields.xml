@@ -2,6 +2,7 @@
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
     <fields>
+      <javascript file="{{ $this->view->getPath() . '/script.js' }}"/>
        <mhiddenfield id="setor::idSetor" />        
        <mtextfield id="setor::sigla" label="Sigla" />        
        <mtextfield id="setor::nome" label="Nome" />      
@@ -9,7 +10,12 @@
        <mlookupfieldvalue id="setor::idSetorPaiDesc"  label="SetorPai"  related="setor::idSetorPai:idSetor,setor::idSetorPaiDesc:nome" 
         action="curso/setor/lookup" />
 
-        <mtextfield id="setor::idSetorPai" />
+        <mcheckbox id="exibirIdSetorPai" text="Exibir o id do setor pai?" value="0">
+          <event event="onChange" handler="trocaVisibleIdSetorPai();" preventDefault="false"/>
+        </mcheckbox>
+        <mbasegroup id="baseGroupSetorPai" caption="Id do setor Pai">
+          <mtextfield id="setor::idSetorPai"  />
+        </mbasegroup>
 
     </fields>
     <buttons>

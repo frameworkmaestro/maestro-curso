@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
-    <mform id="formFind" title="Setores sem setor pai" close=">curso/main" base="formBase">
+    <mform id="formFind" title="Setores sem Pai" close=">curso/main" base="formBase">
         <fields>
             <mdatagrid id="gridSetorSemSetorPai" query="$this->data->query" pageLength="15">
                 <mdatagridcolumn field="idSetor" visible="false"/>
