@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform id="formSetores" title="Setores Filhos" close=">curso/main" base="formBase">
+        <fields>
+            <mhcontainer>
+             <mselection id="setorPai" label="Setores:" options="$this->data->setorPaiQuery">
+                <ajax type="text" event="onChange" url="setor/ajaxSetorFilho" load="setoresPane" />
+            </mselection>
+            <mcontentpane id="setoresPane"/>     
+        </mhcontainer>        
+    </fields>
+</mform>
+</view>

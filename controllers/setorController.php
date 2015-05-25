@@ -81,4 +81,17 @@ class SetorController extends MController {
         $this->render();
     }
 
+    public function formSetoresFilhos(){
+         $setor = Setor::create();
+         $this->data->setorPaiQuery = $setor->listByFilter()->asQuery()->chunkResult(0, 2);
+         $this->render();
+    }
+
+    public function ajaxSetorFilho(){
+        $setor = Setor::create();
+        $filter->idSetorPai = $this->data->setorPai;
+        $this->data->setorFilhoQuery = $setor->listByFilter($filter)->asQuery()->chunkResult(0, 2);
+        $this->render();
+    }
+
 }
