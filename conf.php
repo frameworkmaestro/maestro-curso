@@ -2,8 +2,8 @@
 
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'Exemplos',
-    'instituicao' => 'Framework Maestro',
+    'name' => 'Curso',
+    'instituicao' => 'Framework Maestro - Curso',
     'import' => array(
         'models.*'
     ),
@@ -19,33 +19,13 @@ return array(
         'class' => "MAuthDbMd5",
         'check' => false
     ),
-    'filters' => array(
-        'session',
-        'profile',
-    ),
     'db' => array(
-        /* Postgres 
-        'exemplos' => array(
-            'driver' => 'pdo_pgsql',
-            'host' => 'localhost',
-            'dbname' => 'exemplos',
-            'user' => 'postgres',
-            'password' => 'pg-admin',
-            'formatDate' => 'DD/MM/YYYY',
-            'formatTime' => 'HH24:MI:SS',
-            'configurationClass' => 'Doctrine\DBAL\Configuration',
-        ),
-         */
-        /* SQLite   */
-        'exemplos' => array(
+        'curso' => array(
             'driver' => 'sqlite3',
-            'path' => Manager::getAppPath('models/sql/exemplos.db'),
+            'path' => Manager::getAppPath('curso.db'),
             'formatDate' => '%d/%m/%Y',
             'formatTime' => '%H:%M:%S',
             'configurationClass' => 'Doctrine\DBAL\Configuration',
         ),
-         /**/
-       
     ),
-    
 );
