@@ -17,6 +17,8 @@
           <mtextfield id="setor::idSetorPai"  />
         </mbasegroup>
 
+        <mselection id="setor::tipoSetor" label="Tipo de Setor" options="$this->data->tipoSetor" />
+
     </fields>
     <buttons>
         <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>

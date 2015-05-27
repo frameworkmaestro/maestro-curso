@@ -30,6 +30,7 @@ class SetorController extends MController {
 
     public function formNew() {
         $this->data->action = '@curso/setor/save';
+        $this->data->tipoSetor = EnumTipoSetor::listAll();
         $this->render();
     }
 
@@ -40,6 +41,7 @@ class SetorController extends MController {
 
     public function formUpdate() {
         $setor= new Setor($this->data->id);
+        $this->data->tipoSetor = EnumTipoSetor::listAll();
         $this->data->setor = $setor->getData();
         $this->data->setor->idSetorPaiDesc = $setor->getSetorPai()->getDescription();
 	
@@ -63,6 +65,14 @@ class SetorController extends MController {
 
     public function save() {
             $setor = new Setor($this->data->setor);
+
+            if ($this->data->setor->tipoSetor == EnumTipoSetor::EXTERNO){
+                if ($this->data->setor->idSetorPai != null){
+                    throw new \EControllerException("Setor externo não pode ter setor pai");
+                    
+                }
+            }
+
             $setor->save();
             $go = '>curso/setor/formObject/' . $setor->getId();
             $this->renderPrompt('information','OK',$go);
